@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Script from "next/script";
 
 const services = [
   {
@@ -45,7 +46,28 @@ export default function PoliklinikaMatejic() {
   const [questionOpen, setQuestionOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <>
+      <Script id="voiceflow-chat" strategy="afterInteractive">
+        {`
+          (function(d, t) {
+              var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+              v.onload = function() {
+                window.voiceflow.chat.load({
+                  verify: { projectID: '6a009240312149110f9204d7' },
+                  url: 'https://general-runtime.voiceflow.com',
+                  voice: {
+                    url: 'https://runtime-api.voiceflow.com'
+                  }
+                });
+              }
+              v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+              v.type = 'text/javascript';
+              s.parentNode.insertBefore(v, s);
+          })(document, 'script');
+        `}
+      </Script>
+
+      <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
         <div className="bg-teal-700 text-white text-sm">
           <div className="mx-auto max-w-7xl px-4 py-2 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
@@ -299,7 +321,7 @@ export default function PoliklinikaMatejic() {
         >
           💬 Pitajte vašeg doktora
         </button>
-      </div>
-    </div>
+      </div>      </div>
+    </>
   );
 }
