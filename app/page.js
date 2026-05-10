@@ -298,30 +298,7 @@ export default function PoliklinikaMatejic() {
         </div>
       </footer>
 
-      <div className="fixed bottom-5 right-5 z-50">
-        {questionOpen && (
-          <div className="mb-3 w-[320px] rounded-3xl bg-white p-5 shadow-2xl border border-slate-200">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="font-bold text-slate-900">Pitajte vašeg doktora</p>
-                <p className="mt-1 text-sm text-slate-600">Pošaljite kratko pitanje, a naš tim će vam odgovoriti u najkraćem roku.</p>
-              </div>
-              <button onClick={() => setQuestionOpen(false)} className="text-slate-400 hover:text-slate-700">✕</button>
-            </div>
-            <textarea className="mt-4 min-h-28 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-teal-600" placeholder="Unesite pitanje..." />
-            <button className="mt-3 w-full rounded-full bg-teal-700 px-5 py-3 text-white font-bold hover:bg-teal-800 transition">
-              Pošalji pitanje
-            </button>
-          </div>
-        )}
-
-        <button
-          onClick={() => setQuestionOpen((value) => !value)}
-          className="rounded-full bg-teal-700 px-5 py-4 text-white font-bold shadow-2xl hover:bg-teal-800 transition flex items-center gap-2"
-        >
-          💬 Pitajte vašeg doktora
-        </button>
-      </div>      </div>
+        </div>
     </>
   );
 }
